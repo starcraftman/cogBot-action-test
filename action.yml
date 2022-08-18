@@ -1,0 +1,13 @@
+name: Test CogBot
+description: Provide a docker base to execute the tests on a commit
+inputs:
+  branch:
+    description: The branch to run tests on
+    required: false
+    default: master
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.branch }}
